@@ -14,7 +14,7 @@ class PostLockTheme extends Themelet
     {
         return SHM_POST_INFO(
             "Metadata Locked",
-            $image->is_locked() ? "Yes (Only admins may edit these details)" : "No",
+            $image->is_locked() ? "Yes - Cannot edit for every users" : "No",
             Ctx::$user->can(PostLockPermission::EDIT_IMAGE_LOCK) ? INPUT(["type" => "checkbox", "name" => "locked", "checked" => $image->is_locked()]) : null
         );
     }
